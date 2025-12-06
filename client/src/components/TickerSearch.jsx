@@ -16,7 +16,7 @@ function TickerSearch() {
     setResults([]); 
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/stocks/search/${query}`);
+      const res = await axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/search/${query}`);
       setResults(res.data.slice(0, 5)); // Show top 5
     } catch (error) {
       console.error("Search error");

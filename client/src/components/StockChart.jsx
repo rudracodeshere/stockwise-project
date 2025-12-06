@@ -10,7 +10,7 @@ function StockChart({ ticker }) {
     const fetchHistory = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5000/api/stocks/${ticker}/history`);
+        const response = await axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/${ticker}/history`);
         setChartData(response.data);
       } catch (error) {
         console.error('Error loading chart:', error);

@@ -10,7 +10,7 @@ function StockNews({ ticker }) {
       setNews(null); // CRITICAL: Clear old news immediately
       setLoading(true);
       
-      axios.get(`http://localhost:5000/api/stocks/${ticker}/news`)
+      axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/${ticker}/news`)
         .then(res => {
             setNews(res.data);
             setLoading(false);

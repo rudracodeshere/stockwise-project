@@ -11,7 +11,7 @@ function Portfolio() {
   // --- 1. FETCH DATA ---
   const load = async () => {
     try { 
-      const res = await axios.get('http://localhost:5000/api/portfolio'); 
+      const res = await axios.get('https://stockwise-api-hxtg.onrender.com/api/portfolio'); 
       setHoldings(Array.isArray(res.data) ? res.data : []); 
     } catch(e) { console.error(e); }
   };
@@ -27,7 +27,7 @@ function Portfolio() {
     if(btn) { btn.innerText = 'Processing...'; btn.disabled = true; btn.style.opacity = 0.7; }
 
     try {
-        await axios.post('http://localhost:5000/api/portfolio/buy', { 
+        await axios.post('https://stockwise-api-hxtg.onrender.com/api/portfolio/buy', { 
         ticker: form.ticker.toUpperCase(), quantity: Number(form.qty), price: Number(form.price) 
         });
         setForm({ ticker: '', qty: '', price: '' }); 
@@ -39,7 +39,7 @@ function Portfolio() {
 
   const remove = async (id) => {
     if(confirm('Sell this position completely?')) { 
-      await axios.delete(`http://localhost:5000/api/portfolio/${id}`); 
+      await axios.delete(`https://stockwise-api-hxtg.onrender.com/api/portfolio/${id}`); 
       load(); 
     }
   };
@@ -53,7 +53,7 @@ function Portfolio() {
       { ticker: 'HDFCBANK', quantity: 20, price: 1500 },
       { ticker: 'ZOMATO', quantity: 100, price: 140 }
     ];
-    for (let stock of demoStocks) { await axios.post('http://localhost:5000/api/portfolio/buy', stock); }
+    for (let stock of demoStocks) { await axios.post('https://stockwise-api-hxtg.onrender.com/api/portfolio/buy', stock); }
     await load();
     setLoading(false);
   };

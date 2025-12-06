@@ -6,7 +6,7 @@ function MarketScanner() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/stocks/market/movers')
+    axios.get('https://stockwise-api-hxtg.onrender.com/api/stocks/market/movers')
       .then(res => setMovers(res.data))
       .catch(e => console.error(e))
       .finally(() => setLoading(false));

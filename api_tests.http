@@ -1,8 +1,8 @@
 ### Get all stocks (should be empty at first)
-GET http://localhost:5000/api/stocks
+GET https://stockwise-api-hxtg.onrender.com/api/stocks
 
 ### Add a new stock
-POST http://localhost:5000/api/stocks
+POST https://stockwise-api-hxtg.onrender.com/api/stocks
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 }
 
 ### Add another stock
-POST http://localhost:5000/api/stocks
+POST https://stockwise-api-hxtg.onrender.com/api/stocks
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### Try to add a duplicate stock (should fail)
-POST http://localhost:5000/api/stocks
+POST https://stockwise-api-hxtg.onrender.com/api/stocks
 Content-Type: application/json
 
 {
@@ -26,4 +26,4 @@ Content-Type: application/json
 }
 
 ### Get all stocks again (should now have 2 stocks)
-GET http://localhost:5000/api/stocks
+GET https://stockwise-api-hxtg.onrender.com/api/stocks

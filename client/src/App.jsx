@@ -43,7 +43,7 @@ function App() {
   // Load Market Data
   useEffect(() => {
     if (!isAuthenticated) return; // Don't fetch if not logged in
-    const loadMarket = async () => { try { const res = await axios.get('http://localhost:5000/api/stocks/market/status'); setMarketStatus(res.data); } catch(e) {} };
+    const loadMarket = async () => { try { const res = await axios.get('https://stockwise-api-hxtg.onrender.com/api/stocks/market/status'); setMarketStatus(res.data); } catch(e) {} };
     loadMarket();
     const interval = setInterval(loadMarket, 30000); 
     return () => clearInterval(interval);

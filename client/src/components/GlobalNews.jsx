@@ -11,8 +11,8 @@ function GlobalNews() {
       try {
         // Fetch two categories of news
         const [resMarket, resEco] = await Promise.all([
-          axios.get(`http://localhost:5000/api/stocks/SENSEX/news`),
-          axios.get(`http://localhost:5000/api/stocks/NIFTY/news`)
+          axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/SENSEX/news`),
+          axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/NIFTY/news`)
         ]);
         setMarketNews(resMarket.data.news || []);
         setEconomyNews(resEco.data.news || []);

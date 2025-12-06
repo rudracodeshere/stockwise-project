@@ -7,7 +7,7 @@ function MarketStatus() {
   useEffect(() => {
     const fetchMarket = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/stocks/market/status');
+        const res = await axios.get('https://stockwise-api-hxtg.onrender.com/api/stocks/market/status');
         setIndices(res.data);
       } catch (error) {
         console.error("Error loading market status");

@@ -9,7 +9,7 @@ function Watchlist({ onSelectStock }) {
 
   const fetchStocks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/stocks');
+      const res = await axios.get('https://stockwise-api-hxtg.onrender.com/api/stocks');
       setStocks(res.data);
     } catch (e) {}
   };
@@ -19,13 +19,13 @@ function Watchlist({ onSelectStock }) {
   const handleSearch = async (e) => {
     setQuery(e.target.value);
     if (e.target.value.length > 2) {
-      const res = await axios.get(`http://localhost:5000/api/stocks/search/${e.target.value}`);
+      const res = await axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/search/${e.target.value}`);
       setSearchResults(res.data.slice(0, 5));
     } else { setSearchResults([]); }
   };
 
   const addStock = async (ticker) => {
-    await axios.post('http://localhost:5000/api/stocks', { ticker });
+    await axios.post('https://stockwise-api-hxtg.onrender.com/api/stocks', { ticker });
     setQuery(''); setSearchResults([]); fetchStocks();
   };
 
@@ -33,7 +33,7 @@ function Watchlist({ onSelectStock }) {
   const removeStock = async (e, id) => {
     e.stopPropagation(); // Prevents clicking the row when clicking delete
     if (confirm('Remove from Watchlist?')) {
-      await axios.delete(`http://localhost:5000/api/stocks/${id}`);
+      await axios.delete(`https://stockwise-api-hxtg.onrender.com/api/stocks/${id}`);
       fetchStocks();
     }
   };

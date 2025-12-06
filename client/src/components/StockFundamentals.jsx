@@ -6,7 +6,7 @@ function StockFundamentals({ ticker }) {
 
   useEffect(() => {
     if (ticker) {
-      axios.get(`http://localhost:5000/api/stocks/${ticker}/fundamentals`)
+      axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/${ticker}/fundamentals`)
         .then(res => setData(res.data))
         .catch(e => console.error(e));
     }

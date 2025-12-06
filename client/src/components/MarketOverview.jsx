@@ -10,8 +10,8 @@ function MarketOverview({ onSelectStock }) { // Accept the prop here
     const fetchData = async () => {
       try {
         const [resIndices, resMovers] = await Promise.all([
-          axios.get('http://localhost:5000/api/stocks/market/status'),
-          axios.get('http://localhost:5000/api/stocks/market/movers')
+          axios.get('https://stockwise-api-hxtg.onrender.com/api/stocks/market/status'),
+          axios.get('https://stockwise-api-hxtg.onrender.com/api/stocks/market/movers')
         ]);
         setIndices(resIndices.data);
         setMovers(resMovers.data);

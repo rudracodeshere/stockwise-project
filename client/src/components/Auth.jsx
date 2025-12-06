@@ -16,7 +16,7 @@ function Auth({ onLogin }) {
     const endpoint = isLogin ? 'login' : 'register';
     
     try {
-      const res = await axios.post(`http://localhost:5000/api/auth/${endpoint}`, {
+      const res = await axios.post(`https://stockwise-api-hxtg.onrender.com/api/auth/${endpoint}`, {
         username,
         password
       });

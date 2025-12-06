@@ -9,7 +9,7 @@ function GeneralNews() {
     const fetchNews = async () => {
       try {
         // Fetch news for a general term like 'SENSEX' to get market news
-        const response = await axios.get(`http://localhost:5000/api/stocks/SENSEX/news`);
+        const response = await axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/SENSEX/news`);
         if (response.data && response.data.news) {
             setNews(response.data.news);
         }

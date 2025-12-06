@@ -12,7 +12,7 @@ function AIForecast() {
     setLoading(true);
     setData(null);
     try {
-      const res = await axios.get(`http://localhost:5000/api/stocks/${ticker.toUpperCase()}/forecast`);
+      const res = await axios.get(`https://stockwise-api-hxtg.onrender.com/api/stocks/${ticker.toUpperCase()}/forecast`);
       setData(res.data);
     } catch (error) {
       alert("Analysis failed. Please check the stock symbol (e.g. use 'TCS' or 'TCS.NS').");
