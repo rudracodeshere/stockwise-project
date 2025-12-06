@@ -1,0 +1,29 @@
+### Get all stocks (should be empty at first)
+GET http://localhost:5000/api/stocks
+
+### Add a new stock
+POST http://localhost:5000/api/stocks
+Content-Type: application/json
+
+{
+  "ticker": "RELIANCE"
+}
+
+### Add another stock
+POST http://localhost:5000/api/stocks
+Content-Type: application/json
+
+{
+  "ticker": "TCS"
+}
+
+### Try to add a duplicate stock (should fail)
+POST http://localhost:5000/api/stocks
+Content-Type: application/json
+
+{
+  "ticker": "RELIANCE"
+}
+
+### Get all stocks again (should now have 2 stocks)
+GET http://localhost:5000/api/stocks
